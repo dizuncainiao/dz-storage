@@ -13,9 +13,16 @@ const __dirname = dirname(__filename);
 
 export default defineConfig({
     input: resolve(__dirname, './src/index.ts'),
-    output: {
-        file: 'index.js',
-        format: 'esm',
-    },
+    output: [
+        {
+            file: 'dist/es/index.js',
+            format: 'esm',
+        },
+        {
+            file: 'dist/lib/index.js',
+            format: 'umd',
+            name: 'DzStorage'
+        },
+    ],
     plugins: [/*terser(),*/ babel({presets: ['@babel/preset-env']}), typescript()]
 })

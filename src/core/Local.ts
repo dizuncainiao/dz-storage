@@ -1,10 +1,10 @@
-import DZStorage from './Storage'
+import DzStorage from './Storage'
 
-class DZLocalStorage extends DZStorage {
+class DzLocalStorage extends DzStorage {
     constructor() {
         super('localStorage');
     }
 }
 
-export const localStore = new DZLocalStorage()
+export const localStore = new DzLocalStorage()
 

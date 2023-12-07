@@ -1,10 +1,10 @@
-import DZStorage from './Storage'
+import DzStorage from './Storage'
 
-class DZSessionStorage extends DZStorage {
+class DzSessionStorage extends DzStorage {
     constructor() {
         super('sessionStorage');
     }
 }
 
-export const sessionStore = new DZSessionStorage()
+export const sessionStore = new DzSessionStorage()
 

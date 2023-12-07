@@ -16,7 +16,7 @@ const TYPE_IS_VALUE = {
 
 const TYPE_IS_VALUE_KEY = Object.keys(TYPE_IS_VALUE)
 
-class DZStorage {
+class DzStorage {
     protected store: Storage
 
     constructor(type: StoreType) {
@@ -55,6 +55,14 @@ class DZStorage {
         this.store.removeItem(key)
     }
 
+    key(index: number) {
+        return this.store.key(index)
+    }
+
+    get length() {
+        return this.store.length
+    }
+
     get setItem() {
         return this.set
     }
@@ -73,5 +81,5 @@ class DZStorage {
 }
 
 export {
-    DZStorage as default
+    DzStorage as default
 }
