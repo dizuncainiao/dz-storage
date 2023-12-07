@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script type="module">
-        import store from './index.js'
+        import {localStore, sessionStore} from './index.js'
 
-        window.DzStore = store
+        window.localStore = localStore
+        window.sessionStore = sessionStore
     </script>
 </head>
 

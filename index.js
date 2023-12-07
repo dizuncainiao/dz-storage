@@ -51,12 +51,12 @@ class DZStorage {
     constructor(type) {
         this.store = STORES[type];
     }
-    pack(originalData) {
+    __pack__(originalData) {
         const type = getType(originalData);
         return JSON.stringify({ value: originalData, type });
     }
     set(key, value) {
-        const packValue = this.pack(value);
+        const packValue = this.__pack__(value);
         this.store.setItem(key, packValue);
     }
     get(key) {
@@ -76,7 +76,35 @@ class DZStorage {
             return wrapper;
         }
     }
+    remove(key) {
+        this.store.removeItem(key);
+    }
+    get setItem() {
+        return this.set;
+    }
+    get getItem() {
+        return this.get;
+    }
+    get removeItem() {
+        return this.remove.bind(this);
+    }
+    clear() {
+        this.store.clear();
+    }
 }
-const store = new DZStorage('localStorage');
 
-export { store as default };
+class DZLocalStorage extends DZStorage {
+    constructor() {
+        super('localStorage');
+    }
+}
+const localStore = new DZLocalStorage();
+
+class DZSessionStorage extends DZStorage {
+    constructor() {
+        super('sessionStorage');
+    }
+}
+const sessionStore = new DZSessionStorage();
+
+export { localStore, sessionStore };

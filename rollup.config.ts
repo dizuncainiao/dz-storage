@@ -17,5 +17,5 @@ export default defineConfig({
         file: 'index.js',
         format: 'esm',
     },
-    plugins: [/*terser(),*/ babel({ presets: ['@babel/preset-env'] }), typescript()]
+    plugins: [/*terser(),*/ babel({presets: ['@babel/preset-env']}), typescript()]
 })
