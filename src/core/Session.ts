@@ -1,4 +1,4 @@
-import DzStorage from './Storage'
+import DzStorage from './Storage.ts'
 
 class DzSessionStorage extends DzStorage {
     constructor() {

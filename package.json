@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "rollup --config rollup.config.ts --configPlugin typescript -w"
+    "dev": "rollup --config rollup.config.ts --configPlugin swc -w"
   },
   "keywords": [],
   "author": "",
@@ -12,14 +12,11 @@
   "devDependencies": {
     "@babel/core": "^7.23.5",
     "@babel/preset-env": "^7.23.5",
-    "@rollup/plugin-auto-install": "^3.0.5",
     "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-swc": "^0.3.0",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.5",
     "@types/node": "^20.10.3",
     "rollup": "^4.6.1",
-    "tslib": "^2.6.2",
     "typescript": "^5.3.2"
   }
 }

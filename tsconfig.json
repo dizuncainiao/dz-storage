@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "lib": ["esnext", "dom"],
-    "rootDirs": ["./"]
+    "rootDirs": ["./"],
+    "allowImportingTsExtensions": true
   }
 }

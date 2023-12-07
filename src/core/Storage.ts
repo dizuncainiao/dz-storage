@@ -1,4 +1,4 @@
-import {getType} from "../utils/is";
+import {getType} from "../utils/is.ts";
 
 type StoreType = keyof typeof STORES
 type TypeIsValue = keyof typeof TYPE_IS_VALUE

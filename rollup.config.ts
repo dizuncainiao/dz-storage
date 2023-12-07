@@ -1,9 +1,7 @@
 import {defineConfig} from 'rollup';
-import typescript from '@rollup/plugin-typescript';
+import swc from '@rollup/plugin-swc';
 import terser from '@rollup/plugin-terser';
 import {babel} from '@rollup/plugin-babel';
-import auto from '@rollup/plugin-auto-install';
-import RollupResolve from '@rollup/plugin-node-resolve';
 
 import {resolve, dirname} from 'node:path'
 import {fileURLToPath} from "node:url";
@@ -24,5 +22,5 @@ export default defineConfig({
             name: 'DzStorage'
         },
     ],
-    plugins: [/*terser(),*/ babel({presets: ['@babel/preset-env']}), typescript()]
+    plugins: [/*terser(),*/ /*babel({presets: ['@babel/preset-env']}),*/ swc()]
 })

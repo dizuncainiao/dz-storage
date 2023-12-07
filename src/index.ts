@@ -1,2 +1,2 @@
-export * from './core/Local'
-export * from './core/Session'
+export * from './core/Local.ts'
+export * from './core/Session.ts'
