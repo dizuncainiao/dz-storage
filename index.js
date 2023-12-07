@@ -86,7 +86,7 @@ class DZStorage {
         return this.get;
     }
     get removeItem() {
-        return this.remove.bind(this);
+        return this.remove;
     }
     clear() {
         this.store.clear();

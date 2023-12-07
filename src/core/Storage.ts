@@ -64,7 +64,7 @@ class DZStorage {
     }
 
     get removeItem() {
-        return this.remove.bind(this)
+        return this.remove
     }
 
     clear() {
