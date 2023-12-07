@@ -1,7 +1,7 @@
 import {defineConfig} from 'rollup';
 import swc from '@rollup/plugin-swc';
 import terser from '@rollup/plugin-terser';
-import {babel} from '@rollup/plugin-babel';
+import buble from '@rollup/plugin-buble';
 
 import {resolve, dirname} from 'node:path'
 import {fileURLToPath} from "node:url";
@@ -22,5 +22,5 @@ export default defineConfig({
             name: 'DzStorage'
         },
     ],
-    plugins: [/*terser(),*/ /*babel({presets: ['@babel/preset-env']}),*/ swc()]
+    plugins: [swc(), buble({exclude: 'node_modules/**'}), terser()]
 })

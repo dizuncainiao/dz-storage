@@ -4,15 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "rollup --config rollup.config.ts --configPlugin swc -w"
+    "dev": "rollup -c rollup.config.ts --configPlugin swc -w"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.23.5",
-    "@babel/preset-env": "^7.23.5",
-    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-buble": "^1.0.3",
     "@rollup/plugin-swc": "^0.3.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@types/node": "^20.10.3",
