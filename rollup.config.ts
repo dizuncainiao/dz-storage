@@ -25,14 +25,14 @@ export default defineConfig([
         ],
         plugins: [swc(), buble({exclude: 'node_modules/**'}), terser()]
     },
-    // {
-    //     input: resolve(__dirname, './src/index.ts'),
-    //     output: [
-    //         {
-    //             file: 'dist/index.d.ts',
-    //             format: 'esm',
-    //             plugins: [dts()]
-    //         }
-    //     ]
-    // }
+    {
+        input: resolve(__dirname, './src/index.ts'),
+        plugins: [dts()],
+        output: [
+            {
+                file: 'dist/index.d.ts',
+                format: 'esm',
+            },
+        ]
+    }
 ])

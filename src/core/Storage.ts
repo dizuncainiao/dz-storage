@@ -15,13 +15,13 @@ const TYPE_IS_VALUE = {
 const TYPE_IS_VALUE_KEY = Object.keys(TYPE_IS_VALUE)
 
 class DzStorage {
-    protected store: Storage
+    store: Storage
 
     constructor(type: StoreType) {
         this.store = STORES[type]
     }
 
-    private __pack__(originalData: unknown) {
+    __pack__(originalData: unknown) {
         const type = getType(originalData)
         return JSON.stringify({value: originalData, type})
     }
