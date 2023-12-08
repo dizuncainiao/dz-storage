@@ -1,7 +1,5 @@
 import {getType} from "../utils/is.ts";
-
-type StoreType = keyof typeof STORES
-type TypeIsValue = keyof typeof TYPE_IS_VALUE
+import {StoreType, TypeIsValue} from "../types";
 
 const STORES = {
     localStorage,
@@ -80,6 +78,4 @@ class DzStorage {
     }
 }
 
-export {
-    DzStorage as default
-}
+export default DzStorage

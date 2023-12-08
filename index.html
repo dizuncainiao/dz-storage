@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<!--    <script type="module">-->
-<!--        import {localStore, sessionStore} from './dist/es/index.js'-->
+    <script type="module">
+        import DzStorage, {localStore, sessionStore} from './dist/es/index.js'
 
-<!--        window.localStore = localStore-->
-<!--        window.sessionStore = sessionStore-->
-<!--    </script>-->
-    <script src="dist/lib/index.js"></script>
+        window.localStore = localStore
+        window.sessionStore = sessionStore
+
+        console.log(DzStorage, 'DzStorage')
+    </script>
+<!--    <script src="dist/lib/index.js"></script>-->
 </head>
 
 <body>test</body>
