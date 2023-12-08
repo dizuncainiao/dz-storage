@@ -1,12 +1,22 @@
 {
   "name": "dz-storage",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "rollup -c rollup.config.ts --configPlugin swc -w"
+  "description": "Better Storage (localStorage, sessionStorage)",
+  "main": "dist/lib/index.umd.js",
+  "module": "dist/es/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.esm.js",
+      "require": "./dist/lib/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
   },
-  "keywords": [],
+  "scripts": {
+    "dev": "rollup -c rollup.config.ts --configPlugin swc -w",
+    "bulid": "rollup -c rollup.config.ts --configPlugin swc"
+  },
+  "keywords": ["Storage", "localStorage", "sessionStorage"],
   "author": "",
   "license": "ISC",
   "devDependencies": {

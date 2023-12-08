@@ -14,11 +14,11 @@ export default defineConfig([
         input: resolve(__dirname, './src/index.ts'),
         output: [
             {
-                file: 'dist/es/index.js',
+                file: 'dist/es/index.esm.js',
                 format: 'esm',
             },
             {
-                file: 'dist/lib/index.js',
+                file: 'dist/lib/index.umd.js',
                 format: 'umd',
                 name: 'DzStorage'
             },
