@@ -15,7 +15,8 @@
   "scripts": {
     "dev": "rollup -c rollup.config.ts --configPlugin swc -w",
     "bulid": "rollup -c rollup.config.ts --configPlugin swc",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "Storage",
