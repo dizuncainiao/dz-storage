@@ -2,6 +2,11 @@
   "name": "dz-storage",
   "version": "1.0.0",
   "description": "Better Storage (localStorage, sessionStorage)",
+  "repository": "https://github.com/dizuncainiao/dz-storage",
+  "bugs": {
+    "url": "https://github.com/dizuncainiao/dz-storage/issues",
+    "email": ""
+  },
   "type": "module",
   "main": "dist/lib/index.umd.js",
   "module": "dist/es/index.esm.js",
