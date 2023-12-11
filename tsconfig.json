@@ -11,5 +11,8 @@
     "lib": ["esnext", "dom"],
     "rootDirs": ["./"],
     "allowImportingTsExtensions": true
+  },
+  "ts-node": {
+    "esm": true
   }
 }
