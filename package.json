@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "rollup -c rollup.config.ts --configPlugin swc -w",
     "example": "ts-node scripts/server.ts",
-    "bulid": "rollup -c rollup.config.ts --configPlugin swc",
+    "build": "rollup -c rollup.config.ts --configPlugin swc",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "release": "npm version patch -m \"chore: 🤖 v%s\""
