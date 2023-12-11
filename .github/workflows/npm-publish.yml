@@ -1,0 +1,29 @@
+name: Node.js Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+env:
+  DZ_STORAGE_TOKEN: ${{secrets.DZ_STORAGE_TOKEN}}
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      # 签出您的存储库$GITHUB_WORKSPACE，以便您的工作流可以访问它。
+      - uses: actions/checkout@v3
+      # 安装 pnpm 包管理器
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      # 使用特定版本的 node.js 设置 GitHub Actions 工作流程
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - run: pnpm i --frozen-lockfile
+      - run: npm publish
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"

@@ -20,7 +20,7 @@
   },
   "scripts": {
     "dev": "rollup -c rollup.config.ts --configPlugin swc -w",
-    "open:example": "ts-node scripts/server.ts",
+    "example": "ts-node scripts/server.ts",
     "bulid": "rollup -c rollup.config.ts --configPlugin swc",
     "test": "jest",
     "test:coverage": "jest --coverage"
@@ -33,7 +33,7 @@
   "files": [
     "dist"
   ],
-  "author": "",
+  "author": "https://github.com/dizuncainiao",
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-buble": "^1.0.3",
