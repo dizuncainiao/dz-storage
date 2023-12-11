@@ -1,6 +1,6 @@
 {
   "name": "dz-storage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Better Storage (localStorage, sessionStorage)",
   "repository": "https://github.com/dizuncainiao/dz-storage",
   "bugs": {
@@ -24,7 +24,7 @@
     "bulid": "rollup -c rollup.config.ts --configPlugin swc",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "release": "npm version patch -m \"chore: \uD83E\uDD16 v%s\""
+    "release": "npm version patch -m \"chore: 🤖 v%s\""
   },
   "keywords": [
     "Storage",
