@@ -1,6 +1,6 @@
 {
   "name": "dz-storage",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Better Storage (localStorage, sessionStorage)",
   "repository": "https://github.com/dizuncainiao/dz-storage",
   "bugs": {
