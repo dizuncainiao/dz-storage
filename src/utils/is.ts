@@ -1,5 +1,17 @@
 type TypeMaping = keyof typeof TYPE_MAPING
 
+type BasicType = string | boolean | undefined | null | number
+
+type SetType = Set<BasicType | object>
+
+type MapType = Map<string, BasicType | object>
+
+type DataType = Record<string, BasicType | object>
+
+type ArrayType = Array<BasicType | object>
+
+export type AllowType = BasicType | DataType | ArrayType | SetType | MapType
+
 const _REGEX = /^\[object |\]$/g
 
 const TYPE_MAPING = {
@@ -9,11 +21,13 @@ const TYPE_MAPING = {
   Null: 'null',
   Number: 'number',
   NaN: 'NaN',
-  object: 'object'
+  object: 'object',
+  Set: 'Set',
+  Map: 'Map'
 }
 
 // 类型清晰的类型
-const CLEAR_TYPES = ['String', 'Boolean', 'Undefined', 'Null']
+const CLEAR_TYPES = ['String', 'Boolean', 'Undefined', 'Null', 'Set', 'Map']
 
 const LIKE_OBJECT_TYPES = ['Object', 'Array']
 
@@ -49,7 +63,7 @@ export function isStrictObject(val: unknown) {
   return judgeType(val) === '[object Object]'
 }
 
-export function getType(val: unknown) {
+export function getType(val: AllowType) {
   const typeText = judgeType(val)
   const replaced = typeText.replace(_REGEX, '')
   // 类型为 String、Boolean、Undefined、Null 直接输出

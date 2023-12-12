@@ -1,4 +1,4 @@
-import { getType } from '../utils/is.ts'
+import { AllowType, getType } from '../utils/is.ts'
 import { StoreType, TypeIsValue } from '../types'
 
 const STORES = {
@@ -21,12 +21,19 @@ class DzStorage {
     this.store = STORES[type]
   }
 
-  __pack__(originalData: unknown) {
+  __pack__(originalData: AllowType) {
     const type = getType(originalData)
+    console.log(type, 'type ')
+    if (type === 'Set') {
+      originalData = Array.from(originalData as Iterable<any>)
+    } else if (type === 'Map') {
+      originalData = Array.from(originalData as Iterable<any>)
+    }
+
     return JSON.stringify({ value: originalData, type })
   }
 
-  set(key: string, value: unknown) {
+  set(key: string, value: AllowType) {
     const packValue = this.__pack__(value)
     this.store.setItem(key, packValue)
   }
@@ -40,6 +47,10 @@ class DzStorage {
       // 类型既值
       if (TYPE_IS_VALUE_KEY.includes(type)) {
         return TYPE_IS_VALUE[type as TypeIsValue]
+      } else if (type === 'Set') {
+        return new Set(value)
+      } else if (type === 'Map') {
+        return new Map(value)
       } else {
         return value
       }
