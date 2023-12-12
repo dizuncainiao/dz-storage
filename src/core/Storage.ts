@@ -23,10 +23,10 @@ class DzStorage {
 
   __pack__(originalData: AllowType) {
     const type = getType(originalData)
-    if (type === 'Set') {
+    if (type === 'Set' || type === 'Map') {
       originalData = Array.from(originalData as Iterable<any>)
-    } else if (type === 'Map') {
-      originalData = Array.from(originalData as Iterable<any>)
+    } else if (type === 'BigInt') {
+      originalData = (originalData as bigint).toString()
     }
 
     return JSON.stringify({ value: originalData, type })
@@ -50,6 +50,8 @@ class DzStorage {
         return new Set(value)
       } else if (type === 'Map') {
         return new Map(value)
+      } else if (type === 'BigInt') {
+        return BigInt(value)
       } else {
         return value
       }

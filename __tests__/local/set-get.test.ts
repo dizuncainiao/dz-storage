@@ -57,6 +57,11 @@ const configs = [
       ['foo3', 'Hello world!'],
       ['foo4', 'Hello world!']
     ])
+  },
+  {
+    name: 'set BigInt',
+    key: new Date().getTime().toString(),
+    value: 12345678901234567890123456789n
   }
 ]
 

@@ -1,6 +1,6 @@
 type TypeMaping = keyof typeof TYPE_MAPING
 
-type BasicType = string | boolean | undefined | null | number
+type BasicType = string | boolean | undefined | null | number | bigint
 
 type SetType = Set<BasicType | object>
 
@@ -23,11 +23,12 @@ const TYPE_MAPING = {
   NaN: 'NaN',
   object: 'object',
   Set: 'Set',
-  Map: 'Map'
+  Map: 'Map',
+  BigInt: 'BigInt'
 }
 
 // 类型清晰的类型
-const CLEAR_TYPES = ['String', 'Boolean', 'Undefined', 'Null', 'Set', 'Map']
+const CLEAR_TYPES = ['String', 'Boolean', 'Undefined', 'Null', 'Set', 'Map', 'BigInt']
 
 const LIKE_OBJECT_TYPES = ['Object', 'Array']
 
