@@ -23,7 +23,6 @@ class DzStorage {
 
   __pack__(originalData: AllowType) {
     const type = getType(originalData)
-    console.log(type, 'type ')
     if (type === 'Set') {
       originalData = Array.from(originalData as Iterable<any>)
     } else if (type === 'Map') {
