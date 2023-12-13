@@ -62,6 +62,11 @@ const configs = [
     name: 'set BigInt',
     key: new Date().getTime().toString(),
     value: 12345678901234567890123456789n
+  },
+  {
+    name: 'set Symbol',
+    key: new Date().getTime().toString(),
+    value: Symbol.for('hello world')
   }
 ]
 

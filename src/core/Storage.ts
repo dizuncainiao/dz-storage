@@ -27,6 +27,8 @@ class DzStorage {
       originalData = Array.from(originalData as Iterable<any>)
     } else if (type === 'BigInt') {
       originalData = (originalData as bigint).toString()
+    } else if (type === 'Symbol') {
+      originalData = Symbol.keyFor(originalData as symbol)
     }
 
     return JSON.stringify({ value: originalData, type })
@@ -52,6 +54,8 @@ class DzStorage {
         return new Map(value)
       } else if (type === 'BigInt') {
         return BigInt(value)
+      }  else if (type === 'Symbol') {
+        return Symbol.for(value)
       } else {
         return value
       }
