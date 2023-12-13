@@ -35,34 +35,8 @@ const LIKE_OBJECT_TYPES = ['Object', 'Array']
 
 export const judgeType = (val: unknown) => Object.prototype.toString.call(val)
 
-export function isString(val: unknown) {
-  return judgeType(val) === '[object String]'
-}
-
-export function isBoolean(val: unknown) {
-  return judgeType(val) === '[object Boolean]'
-}
-
-export function isUndefined(val: unknown) {
-  return judgeType(val) === '[object Undefined]'
-}
-
-export function isNull(val: unknown) {
-  return judgeType(val) === '[object Null]'
-}
-
 export function isNumber(val: unknown) {
   return !Number.isNaN(val) && judgeType(val) === '[object Number]'
-}
-
-// 对象或数组
-export function isObject(val: unknown) {
-  return !isNull(val) && typeof val === 'object'
-}
-
-// 只能是对象！！！
-export function isStrictObject(val: unknown) {
-  return judgeType(val) === '[object Object]'
 }
 
 export function getType(val: AllowType) {
