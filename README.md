@@ -53,7 +53,12 @@ localStore.get('o') // {name: 'zhangsan'}
 
 localStore.set('a', [{name: 'zhangsan'}])
 localStore.get('a') // [{name: 'zhangsan'}]
+
+localStore.set('s', Symbol.for('Hello world'))
+localStore.get('s') // Symbol(Hello world)
 ```
+
+**注意：为保证 `symbol` 的唯一性，请使用 `Symbol.for` 来创建。**
 
 更多代码示例请查阅 [https://blog.csdn.net/dizuncainiao/article/details/134958324](https://blog.csdn.net/dizuncainiao/article/details/134958324) 
 
