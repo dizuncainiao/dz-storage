@@ -54,7 +54,7 @@ class DzStorage {
         return new Map(value)
       } else if (type === 'BigInt') {
         return BigInt(value)
-      }  else if (type === 'Symbol') {
+      } else if (type === 'Symbol') {
         return Symbol.for(value)
       } else {
         return value
