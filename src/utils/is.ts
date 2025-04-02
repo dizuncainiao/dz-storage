@@ -1,4 +1,4 @@
-type TypeMaping = keyof typeof TYPE_MAPING
+type TypeMapping = keyof typeof TYPE_MAPPING
 
 type BasicType = string | boolean | undefined | null | number | bigint | symbol
 
@@ -12,9 +12,9 @@ type ArrayType = Array<BasicType | object>
 
 export type AllowType = BasicType | DataType | ArrayType | SetType | MapType
 
-const _REGEX = /^\[object |\]$/g
+const _REGEX = /^\[object |]$/g
 
-const TYPE_MAPING = {
+const TYPE_MAPPING = {
   String: 'string',
   Boolean: 'boolean',
   Undefined: 'undefined',
@@ -44,20 +44,20 @@ export function getType(val: AllowType) {
   const replaced = typeText.replace(_REGEX, '')
   // 类型为 String、Boolean、Undefined、Null 直接输出
   if (CLEAR_TYPES.includes(replaced)) {
-    return TYPE_MAPING[replaced as TypeMaping]
+    return TYPE_MAPPING[replaced as TypeMapping]
   }
 
   // NaN or 数值
   if (replaced === 'Number') {
     if (isNumber(val)) {
-      return TYPE_MAPING[replaced]
+      return TYPE_MAPPING[replaced]
     } else {
-      return TYPE_MAPING['NaN']
+      return TYPE_MAPPING['NaN']
     }
   }
 
   // 对象 or 数组
   if (LIKE_OBJECT_TYPES.includes(replaced)) {
-    return TYPE_MAPING['object']
+    return TYPE_MAPPING['object']
   }
 }
