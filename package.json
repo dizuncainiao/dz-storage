@@ -4,8 +4,7 @@
   "description": "Better Storage (localStorage, sessionStorage)",
   "repository": "https://github.com/dizuncainiao/dz-storage",
   "bugs": {
-    "url": "https://github.com/dizuncainiao/dz-storage/issues",
-    "email": ""
+    "url": "https://github.com/dizuncainiao/dz-storage/issues"
   },
   "type": "module",
   "main": "dist/lib/index.umd.js",
@@ -20,7 +19,7 @@
   },
   "scripts": {
     "dev": "rollup -c rollup.config.ts --configPlugin swc -w",
-    "example": "ts-node scripts/server.ts",
+    "example": "node --loader ts-node/esm scripts/server.ts",
     "build": "rollup -c rollup.config.ts --configPlugin swc",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -36,14 +35,22 @@
   ],
   "author": "https://github.com/dizuncainiao",
   "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "pako": "^2.1.0"
+  },
   "devDependencies": {
     "@rollup/plugin-buble": "^1.0.3",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-swc": "^0.3.0",
     "@rollup/plugin-terser": "^0.4.4",
+    "@types/crypto-js": "^4.2.1",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.11",
     "@types/jsdom": "^21.1.6",
     "@types/node": "^20.10.3",
+    "@types/pako": "^2.0.3",
     "express": "^4.18.2",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",

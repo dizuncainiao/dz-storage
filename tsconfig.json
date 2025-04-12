@@ -10,7 +10,8 @@
     "moduleResolution": "Node",
     "lib": ["esnext", "dom"],
     "rootDirs": ["./"],
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   },
   "ts-node": {
     "esm": true
