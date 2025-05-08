@@ -1,19 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "jsx": "preserve",
-    "strict": true,
-    "target": "ESNext",
+    "target": "ES2021",
     "module": "ESNext",
-    "skipLibCheck": true,
+    "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "Node",
-    "lib": ["esnext", "dom"],
-    "rootDirs": ["./"],
-    "allowImportingTsExtensions": true,
-    "noEmit": true
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "baseUrl": "./packages",
+    "paths": {
+      "*": ["*", "./dz-storage/*"]
+    }
   },
-  "ts-node": {
-    "esm": true
-  }
+  "include": ["packages/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

@@ -1,74 +1,77 @@
-# dz-storage
+# optimize-dz-storage
 
-更好用的 `localStorage` 封装，支持几乎所有 Javascript 数据类型的存取，当然 `sessionStorage` 也是支持的。
+基于pnpm的monorepo项目，用于优化dz-storage库。
 
-😁 即取即用：存值、取值均不需要任何转换
+## 项目结构
 
-😁 100% 基于 `localStorage` 纯原生封装
+```
+.
+├── packages/      # 包含所有的包
+├── example/       # 示例应用
+├── .eslintrc.js   # ESLint配置
+├── .prettierrc    # Prettier配置
+└── pnpm-workspace.yaml # 工作空间配置
+```
 
-😁 1:1 实现 `localStorage` api，极致纯粹
+## 开发指南
 
-😁 100% 同步写法，无需 `async` 、`await`
-
-😁 **支持 `string`、`number`、`boolean`、`null`、`undefined`、`NaN`、`object`、`Set`、`Map`、`bigint`、`symbol`**
-
-😁 稳定可靠，测试用例完善，100% 测试覆盖率
-
-😁 超小代码体积，gzip 后不足 **1kb**
-
-😁 支持 TypeScript
-
-## 安装
+### 安装依赖
 
 ```bash
-# npm
-npm i dz-storage
-
-# pnpm
-pnpm add dz-storage
-
-# yarn
-yarn add dz-storage
+pnpm install
 ```
 
-## 使用
+### 代码格式化
 
-```typescript
-import { localStore, sessionStore } from 'dz-storage'
-
-localStore.set('s', 'hello')
-localStore.get('s') // 'hello'
-
-localStore.set('n', 123)
-localStore.get('n') // 123
-
-localStore.set('b', true)
-localStore.get('b') // true
-
-localStore.set('n2', NaN)
-localStore.get('n2') // NaN
-
-localStore.set('o', { name: 'zhangsan' })
-localStore.get('o') // {name: 'zhangsan'}
-
-localStore.set('a', [{ name: 'zhangsan' }])
-localStore.get('a') // [{name: 'zhangsan'}]
-
-localStore.set('s', Symbol.for('Hello world'))
-localStore.get('s') // Symbol(Hello world)
+```bash
+pnpm run format
 ```
 
-**注意：为保证 `symbol` 的唯一性，请使用 `Symbol.for` 来创建。**
+### 代码检查
 
-更多代码示例请查阅 [https://blog.csdn.net/dizuncainiao/article/details/134958324](https://blog.csdn.net/dizuncainiao/article/details/134958324)
+```bash
+pnpm run lint
+```
 
-## api
+### 修复代码问题
 
-| 属性名 | 说明                                                                                              | 别名       |
-| :----- | ------------------------------------------------------------------------------------------------- | ---------- |
-| set    | 同 [localStorage.setItem](https://developer.mozilla.org/zh-CN/docs/Web/API/Storage/setItem)       | setItem    |
-| get    | 同 [localStorage.getItem](https://developer.mozilla.org/zh-CN/docs/Web/API/Storage/getItem)       | getItem    |
-| remove | 同 [localStorage.removeItem](https://developer.mozilla.org/zh-CN/docs/Web/API/Storage/removeItem) | removeItem |
-| clear  | 同 [localStorage.clear](https://developer.mozilla.org/zh-CN/docs/Web/API/Storage/clear)           |            |
-| length | 同 [localStorage.length](https://developer.mozilla.org/zh-CN/docs/Web/API/Storage/length)         |            |
-| key    | 同 [localStorage.key](https://developer.mozilla.org/zh-CN/docs/Web/API/Storage/key)               |            |
+```bash
+pnpm run lint:fix
+```
+
+## 工作空间
+
+本项目使用pnpm工作空间管理多个包：
+
+- `packages/*`: 包含所有的库包
+- `example`: 包含示例应用
+
+## 添加新包
+
+在packages目录下创建新包：
+
+```bash
+mkdir -p packages/my-package
+cd packages/my-package
+pnpm init
+```
+
+## 安装依赖
+
+### 为根目录安装依赖
+
+```bash
+pnpm add -w <package-name>
+```
+
+### 为特定包安装依赖
+
+```bash
+pnpm add <package-name> --filter <workspace-name>
+```
+
+### 工作空间之间的依赖
+
+```bash
+pnpm add @your-scope/package-a --filter @your-scope/package-b
+```

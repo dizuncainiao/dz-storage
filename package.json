@@ -1,66 +1,22 @@
 {
-  "name": "dz-storage",
-  "version": "1.0.8",
-  "description": "Better Storage (localStorage, sessionStorage)",
-  "repository": "https://github.com/dizuncainiao/dz-storage",
-  "bugs": {
-    "url": "https://github.com/dizuncainiao/dz-storage/issues"
-  },
-  "type": "module",
-  "main": "dist/lib/index.umd.js",
-  "module": "dist/es/index.esm.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/es/index.esm.js",
-      "require": "./dist/lib/index.umd.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "scripts": {
-    "dev": "rollup -c rollup.config.ts --configPlugin swc -w",
-    "example": "node --loader ts-node/esm scripts/server.ts",
-    "build": "rollup -c rollup.config.ts --configPlugin swc",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "release": "npm version patch -m \"chore: 🤖 v%s\""
-  },
-  "keywords": [
-    "Storage",
-    "localStorage",
-    "sessionStorage"
-  ],
-  "files": [
-    "dist"
-  ],
-  "author": "https://github.com/dizuncainiao",
+  "private": true,
+  "version": "1.0.0",
+  "author": "",
+  "keywords": [],
   "license": "ISC",
-  "dependencies": {
-    "crypto-js": "^4.2.0",
-    "pako": "^2.1.0"
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@rollup/plugin-buble": "^1.0.3",
-    "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-swc": "^0.3.0",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@types/crypto-js": "^4.2.1",
-    "@types/express": "^4.17.21",
-    "@types/jest": "^29.5.11",
-    "@types/jsdom": "^21.1.6",
-    "@types/node": "^20.10.3",
-    "@types/pako": "^2.0.3",
-    "express": "^4.18.2",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "jsdom": "^23.0.1",
-    "open": "^9.1.0",
-    "prettier": "^3.1.0",
-    "rollup": "^4.6.1",
-    "rollup-plugin-dts": "^6.1.0",
-    "ts-jest": "^29.1.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.3.2"
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "@typescript-eslint/parser": "^8.31.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.1.1",
+    "prettier-plugin-pkgsort": "^0.2.1"
   }
 }
