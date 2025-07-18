@@ -69,26 +69,32 @@ class DzStorage {
     this.store.removeItem(key)
   }
 
+  // 返回第n个键的名称，如果n大于或等于键/值对的数量，则返回null。
   key(index: number) {
     return this.store.key(index)
   }
 
+  // 返回键/值对的数量
   get length() {
     return this.store.length
   }
 
+  // 将键标识的对的值设置为值，如果以前不存在键，则创建一个新的键/值对。
   get setItem() {
     return this.set
   }
 
+  // 返回与给定键关联的当前值，如果给定键不存在，则返回null。
   get getItem() {
     return this.get
   }
 
+  // 如果存在具有给定键的键/值对，则删除具有该键的键-值对。
   get removeItem() {
     return this.remove
   }
 
+  // 删除所有键/值对（如果有的话）
   clear() {
     this.store.clear()
   }
