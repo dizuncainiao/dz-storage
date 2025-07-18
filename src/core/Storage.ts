@@ -39,7 +39,7 @@ class DzStorage {
     this.store.setItem(key, packValue)
   }
 
-  get(key: string): unknown {
+  get<T>(key: string): T | null {
     const wrapper = JSON.parse(this.store.getItem(key) as string)
 
     if (wrapper) {
@@ -47,21 +47,21 @@ class DzStorage {
 
       // 类型既值
       if (TYPE_IS_VALUE_KEY.includes(type)) {
-        return TYPE_IS_VALUE[type as TypeIsValue]
+        return TYPE_IS_VALUE[type as TypeIsValue] as T
       } else if (type === 'Set') {
-        return new Set(value)
+        return new Set(value) as T
       } else if (type === 'Map') {
-        return new Map(value)
+        return new Map(value) as T
       } else if (type === 'BigInt') {
-        return BigInt(value)
+        return BigInt(value) as T
       } else if (type === 'Symbol') {
-        return Symbol.for(value)
+        return Symbol.for(value) as T
       } else {
-        return value
+        return value as T
       }
     } else {
       // 该 key 无对应的值，为 null
-      return wrapper
+      return null
     }
   }
 
